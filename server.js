@@ -31,9 +31,9 @@ const router = require("./router")
 //   }
 // )
 // App
-
+MONGO_URI:mongodb+srv://yugidraft:yugidraft@cluster0.byyce.mongodb.net/yugidraft
 // Database connection
-const DB_URI = "mongodb://localhost:27017/yugidraft";
+const DB_URI = process.env.MONGO_URI;
 mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
