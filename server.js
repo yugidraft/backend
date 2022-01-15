@@ -31,7 +31,7 @@ require('dotenv').config()
 //   }
 // )
 // App
-
+app.use("/", router);
 // Database connection
 const DB_URI = process.env.MONGO_URI
 mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });

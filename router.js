@@ -11,7 +11,7 @@ const router = express.Router();
 
 
 
-router.post("api/checkAvailableRooms", function (req, res) {
+router.post("/api/checkAvailableRooms", function (req, res) {
   if (Object.keys(server.rooms).includes(req.body)) {
     return res.status(500).send("game exists");
   }
@@ -21,7 +21,7 @@ router.post("api/checkAvailableRooms", function (req, res) {
 
 
 
-router.post("api/getPublicDecks", async function (req, res) {
+router.post("/api/getPublicDecks", async function (req, res) {
   const temp = ''
   var decks = [{
     isPublic: true,
@@ -55,7 +55,7 @@ router.post("api/getPublicDecks", async function (req, res) {
 
 });
 
-router.post("api/getInitialCards", async function (req, res) {
+router.post("/api/getInitialCards", async function (req, res) {
 
   console.log("body is, ", req.body);
   const deckName = '2013 Collectible Tins Wave 1';
@@ -75,7 +75,7 @@ router.post("api/getInitialCards", async function (req, res) {
 });
 
 
-router.get("api/getCardsFromDeck/:name", async function (req, res) {
+router.get("/api/getCardsFromDeck/:name", async function (req, res) {
   const deckName = req.params.name;
 
   try {
@@ -91,7 +91,7 @@ router.get("api/getCardsFromDeck/:name", async function (req, res) {
   }
 });
 
-router.post("api/getDeck", async function (req, res) {
+router.post("/api/getDeck", async function (req, res) {
   const deckName = req.body;
   console.log(deckName);
   try {
@@ -110,7 +110,7 @@ router.post("api/getDeck", async function (req, res) {
   }
 });
 
-router.get("api/listDecks", async (req, res) => {
+router.get("/api/listDecks", async (req, res) => {
   var deck = [];
   var limited = [];
   console.log("inside list decks");
