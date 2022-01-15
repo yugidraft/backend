@@ -44,8 +44,6 @@ db.once("open", () => {
   console.log("Connected to DB");
 });
 
-app.use("/", router);
-
 var rooms = { roomId: "3zauu" };
 
 app.use(bodyParser.json());
