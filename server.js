@@ -21,7 +21,7 @@ const router = require("./router")
 // const cors = require('cors') // Handling CORS for accessible APIs
 // const morgan = require('morgan') // Request logging
 // const compression = require('compression') // GZIP middleware for compressing responses
-// require('dotenv').config()
+require('dotenv').config()
 //
 //   {
 //   "origin": "*",
@@ -33,7 +33,7 @@ const router = require("./router")
 // App
 
 // Database connection
-const DB_URI = process.env.MONGO_URI;
+const DB_URI = process.env.MONGO_URI
 mongoose.connect(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
@@ -52,7 +52,7 @@ app.use(bodyParser.json());
 var MAX_PLAYERS = 8
 
 
-http.listen(proprocess.env.PORT, function () {
+http.listen(process.env.PORT, function () {
   console.log(`listening on port ${process.env.PORT}`);
 });
 
