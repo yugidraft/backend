@@ -49,9 +49,9 @@ var rooms = { roomId: "3zauu" };
 app.use(bodyParser.json());
 var MAX_PLAYERS = 8
 
-
-http.listen(process.env.PORT, function () {
-  console.log(`listening on port ${process.env.PORT}`);
+var port = process.env.PORT || 80;
+http.listen(port, function () {
+  console.log(`listening on port ${port}`);
 });
 
 module.exports.rooms = rooms;
